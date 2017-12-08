@@ -1,0 +1,20 @@
+
+<nav class="nav-container  green accent-4">
+  <div class="nav-wrapper container">
+    <a id="logo-container" routerLink="/" class="brand-logo"><img src="https://www.freelogoservices.com/api/main/images/1j+ojl1FOMkX9WypfBe43D6kjfCFrR9JmxfEwXs1M3EMoAJtlSEvgfRu8...84" height="60" width="150" alt="logo"/></a>
+    <ul class="right nav-ul grey darken 3 " *ngIf="logged">
+      <li><span class="chip">Welcome, <b>{{username}}</b></span></li>
+      <li *ngIf="admin"><a class="black-text" routerLink="/add-product">Add Product</a></li>
+      <li *ngIf="admin"><a class="black-text" routerLink="/orders/manage">Manage Orders</a></li>
+      <li><a class="black-text" routerLink="/catalog">Catalog</a></li>
+      <li><a class="black-text" routerLink="/my-orders">My Orders</a></li>
+      <li><a class="black-text" routerLink="/logout" (click)="logOut()">Log Out</a></li>
+    </ul>
+    <ul class="right nav-ul" *ngIf="!logged">
+      <li><a class="black-text" routerLink="/catalog">Catalog</a></li>
+      <li><a class="black-text" routerLink="/login">Login</a></li>
+      <li><a class="black-text" routerLink="/register">Register</a></li>
+    </ul>
+  </div>
+</nav>
+<router-outlet></router-outlet>

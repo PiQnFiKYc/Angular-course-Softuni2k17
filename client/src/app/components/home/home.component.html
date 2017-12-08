@@ -1,0 +1,19 @@
+
+<div class="header-wrapper">
+  <h1>Welcome to <b>ExploreBG</b></h1>
+  <div class="text-wrapper">
+    <p><b>ExploreBG</b> covers some of the biggest Bulgarian cities with their sights, giving our users the opportunity of making a trip.</p>
+    <p><b>Some of Bulgaria sights:</b></p>
+  </div>
+</div>
+<div id="mapid"></div>
+<div class="text-wrapper">
+  
+  <button type="submit" class="btn center-btn btn-primary green"><a class="white-text" routerLink="/catalog">Explore Bulgaria</a></button>
+
+</div>
+<div class="row" *ngIf="!mapLoaded">
+  <div class="progress">
+    <div class="indeterminate"></div>
+  </div>
+</div>
