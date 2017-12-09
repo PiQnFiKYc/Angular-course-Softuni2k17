@@ -7,15 +7,19 @@ import {HttpClientModule} from "@angular/common/http";
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import {RegisterComponent} from './components/register/register.component'
 
-
-import {LocationsService} from './services/locations-service/location.service'
+import {LocationsService} from './services/locations-service/location.service';
+import { LoginComponent } from './components/login/login.component'
+import {AuthService} from './services/auth-service/auth.service'
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +27,7 @@ import {LocationsService} from './services/locations-service/location.service'
     FormsModule,
     HttpClientModule
   ],
-  providers: [LocationsService],
+  providers: [LocationsService,AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

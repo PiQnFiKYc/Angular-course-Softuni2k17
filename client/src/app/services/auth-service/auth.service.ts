@@ -47,7 +47,7 @@ export class AuthService {
   register(username, email, password): Observable<any> {
     const body = JSON.stringify({name: username, username, email, password, isAdmin: false, orders: []});
     return this.http.post(`https://baas.kinvey.com/user/kid_H1tbVAPZz/`, body, {
-      headers: new HttpHeaders().set('Authorization', 'Basic ' + btoa(`71c8c23a90064aaebc0a9ae4b26678f6`))
+      headers: new HttpHeaders().set('Authorization', 'Basic ' + btoa(`${this.appKey}:${this.appSecret}`))
         .set('Content-Type', 'application/json')
     });
   }
@@ -55,7 +55,7 @@ export class AuthService {
   login(username, password): Observable<any> {
     const body = JSON.stringify({username, password});
     return this.http.post('https://baas.kinvey.com/user/kid_H1tbVAPZz/login', body, {
-      headers: new HttpHeaders().set('Authorization', 'Basic ' + btoa(`71c8c23a90064aaebc0a9ae4b26678f6`))
+      headers: new HttpHeaders().set('Authorization', 'Basic ' + btoa(`${this.appKey}:${this.appSecret}`))
         .set('Content-Type', 'application/json')
     });
   }
