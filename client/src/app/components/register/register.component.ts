@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {AuthService} from "../../services/auth-service/auth.service";
-// import {ToastrService} from "../../services/toastr-service/toastr.service";
+import {ToastrService} from "../../services/toastr-service/toastr.service";
 
 @Component({
   selector: 'app-register',
@@ -16,7 +16,8 @@ export class RegisterComponent implements OnInit {
 
   // TODO:add toastr
   constructor(private router: Router,
-              private auth: AuthService) {
+              private auth: AuthService,
+              private toastr:ToastrService) {
   }
 
   ngOnInit() {
@@ -29,10 +30,10 @@ export class RegisterComponent implements OnInit {
   submitRegister() {
     const message = this.auth.validateRegisterForm(this.username, this.email, this.password, this.repeatedPassword);
     if(!message.success){
-      // this.toastr.errorToast(message.error);
+      this.toastr.errorToast(message.error);
       return;
     }
-    // this.toastr.toast('Registering..');
+    this.toastr.toast('Registering..');
     this.auth.register(this.username, this.email, this.password).subscribe(
       data => {
         if (data.isAdmin) {
@@ -40,14 +41,14 @@ export class RegisterComponent implements OnInit {
         } else {
           localStorage.setItem('role', 'init');
         }
-        // this.toastr.successToast('Successful registration.');
+        this.toastr.successToast('Successful registration.');
         localStorage.setItem('authtoken', data._kmd.authtoken);
         localStorage.setItem('username', data.username);
         localStorage.setItem('userId', data._id);
         this.router.navigate(['/catalog']);
       },
       err => {
-        // this.toastr.errorToast((err.error.description ? err.error.description : 'Unknown error occured. Please try again'));
+        this.toastr.errorToast((err.error.description ? err.error.description : 'Unknown error occured. Please try again'));
       }
     );
   }

@@ -12,6 +12,7 @@ import {RegisterComponent} from './components/register/register.component'
 import {LocationsService} from './services/locations-service/location.service';
 import { LoginComponent } from './components/login/login.component'
 import {AuthService} from './services/auth-service/auth.service'
+import {ToastrService} from './services/toastr-service/toastr.service'
 
 @NgModule({
   declarations: [
@@ -27,7 +28,7 @@ import {AuthService} from './services/auth-service/auth.service'
     FormsModule,
     HttpClientModule
   ],
-  providers: [LocationsService,AuthService],
+  providers: [LocationsService,AuthService,ToastrService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

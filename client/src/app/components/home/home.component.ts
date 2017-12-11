@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {LocationsService} from "../../services/locations-service/location.service";
-// import {ToastrService} from "../../services/toastr-service/toastr.service";
+import {ToastrService} from "../../services/toastr-service/toastr.service";
 
 @Component({
   selector: 'app-home',
@@ -10,11 +10,13 @@ import {LocationsService} from "../../services/locations-service/location.servic
 export class HomeComponent implements OnInit {
   mapLoaded = false;
   constructor(private locationsService: LocationsService,
+              private toastr:ToastrService
              ) { }
 
   ngOnInit() {
-    // this.toastr.toast('Loading locations..');
+    this.toastr.toast('Loading locations..');
     this.locationsService.loadMainMap();
     this.mapLoaded = true;
+    console.log(this.mapLoaded);
   }
 }

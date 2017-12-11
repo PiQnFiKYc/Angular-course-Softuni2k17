@@ -6,14 +6,18 @@
     <p><b>Some of Bulgaria sights:</b></p>
   </div>
 </div>
+
+<div *ngIf="!mapLoaded">
+  <div class="progress">
+    <div class="indeterminate"></div>
+  </div>
+</div>
+
 <div id="mapid"></div>
+
 <div class="text-wrapper">
   
   <button type="submit" class="btn center-btn btn-primary green"><a class="white-text" routerLink="/catalog">Explore Bulgaria</a></button>
 
 </div>
-<div class="row" *ngIf="!mapLoaded">
-  <div class="progress">
-    <div class="indeterminate"></div>
-  </div>
-</div>
+
