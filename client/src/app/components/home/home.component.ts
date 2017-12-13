@@ -17,6 +17,6 @@ export class HomeComponent implements OnInit {
     this.toastr.toast('Loading locations..');
     this.locationsService.loadMainMap();
     this.mapLoaded = true;
-    console.log(this.mapLoaded);
+    // console.log(this.mapLoaded);
   }
 }

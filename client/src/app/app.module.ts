@@ -12,7 +12,12 @@ import {RegisterComponent} from './components/register/register.component'
 import {LocationsService} from './services/locations-service/location.service';
 import { LoginComponent } from './components/login/login.component'
 import {AuthService} from './services/auth-service/auth.service'
-import {ToastrService} from './services/toastr-service/toastr.service'
+import {ToastrService} from './services/toastr-service/toastr.service';
+import { CatalogComponent } from './components/catalog/catalog.component'
+import {CatalogService} from './services/catalog-service/catalog.service';
+import {AdminService} from './services/admin-service/admin.service';
+import { LandmarkComponent } from './components/landmark/landmark.component';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +25,9 @@ import {ToastrService} from './services/toastr-service/toastr.service'
     HomeComponent,
     NotFoundComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    CatalogComponent,
+    LandmarkComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +35,7 @@ import {ToastrService} from './services/toastr-service/toastr.service'
     FormsModule,
     HttpClientModule
   ],
-  providers: [LocationsService,AuthService,ToastrService],
+  providers: [LocationsService,AuthService,ToastrService,CatalogService,AdminService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
