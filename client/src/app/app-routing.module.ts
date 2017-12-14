@@ -5,6 +5,8 @@ import {NotFoundComponent} from './components/not-found/not-found.component'
 import {RegisterComponent} from './components/register/register.component'
 import {LoginComponent} from './components/login/login.component'
 import {CatalogComponent} from './components/catalog/catalog.component'
+import {AddProductComponent} from './components/add-product/add-product.component'
+
 
 
 const routes: Routes = [
@@ -13,7 +15,7 @@ const routes: Routes = [
   {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
   {path: 'catalog', component: CatalogComponent},
-  {path: 'add-product', component: HomeComponent},
+  {path: 'add-product', component: AddProductComponent},
   {path: 'items/details/:id', component: HomeComponent},
   {path: 'items/edit/:id', component: HomeComponent},
   {path: 'my-orders', component: HomeComponent},

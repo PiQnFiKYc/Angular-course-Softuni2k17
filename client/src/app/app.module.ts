@@ -15,8 +15,10 @@ import {AuthService} from './services/auth-service/auth.service'
 import {ToastrService} from './services/toastr-service/toastr.service';
 import { CatalogComponent } from './components/catalog/catalog.component'
 import {CatalogService} from './services/catalog-service/catalog.service';
+import {RouterAuthService} from './services/router-auth-service/router-auth.service';
 import {AdminService} from './services/admin-service/admin.service';
 import { LandmarkComponent } from './components/landmark/landmark.component';
+import { AddProductComponent } from './components/add-product/add-product.component';
 
 
 @NgModule({
@@ -27,7 +29,8 @@ import { LandmarkComponent } from './components/landmark/landmark.component';
     LoginComponent,
     RegisterComponent,
     CatalogComponent,
-    LandmarkComponent
+    LandmarkComponent,
+    AddProductComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +38,7 @@ import { LandmarkComponent } from './components/landmark/landmark.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [LocationsService,AuthService,ToastrService,CatalogService,AdminService],
+  providers: [LocationsService,AuthService,ToastrService,CatalogService,AdminService,RouterAuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
