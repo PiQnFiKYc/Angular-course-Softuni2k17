@@ -1,0 +1,33 @@
+
+<div *ngIf="isVisible" class="col s6 item-wrapper ">
+  <div class="card horizontal hoverable">
+    <div class="card-image" *ngIf="landmark.imgUrl">
+      <img class="activator card-image-min" src="{{landmark.imgUrl}}" alt="{{landmark.name}}">
+    </div>
+    <div class="card-image" *ngIf="!landmark.imgUrl">
+      <img class="activator card-image-min"
+           src="https://lh3.google.com/u/0/d/1Q8qvS_w_DeskDCxyQIQ8J7MYxF0GtQ97=w1920-h959-iv1" alt="{{landmark.name}}">
+    </div>
+    <div class="card-stacked">
+      <div class="card-content">
+        <h5><b>{{landmark.name}}</b></h5>
+        <b>Description: </b>
+        <p>{{landmark.description}}</p>
+        <b>Location: </b>
+        <p>{{landmark.landmarkLocation}}</p>
+        <!-- <b>Category: </b>
+        <span class="tags" *ngFor="let tag of landmark.category">
+          #{{tag}}
+        </span> -->
+      </div>
+      <div class="card-action">
+        <p *ngIf="permissions">
+          <a class="white-text" routerLink="/landmarks/details/{{landmark._id}}"><button type="submit" class="btn btn-primary green details-btn">Details</button></a>
+        </p>
+        <p *ngIf="!permissions">
+          <a class="red-text" routerLink="/login">Please log in to see details</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
